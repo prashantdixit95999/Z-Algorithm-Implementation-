@@ -1,0 +1,113 @@
+
+<html>
+<head>
+<script>
+function add(){
+ var p,t,new_str;
+    p=(document.getElementById("first").value);
+t=(document.getElementById("second").value);
+    new_str=p.concat('$',t);
+	
+   var n=new_str.length;
+   
+    var z=[];
+	for(var i=0;i<=n;i++)
+	z.push(0);
+    var l=0,r=0;
+    for(var k=1; k<n; k++){
+    
+        if(k>r){
+            l=r=k;
+			
+            while(r<n && new_str.charAt(r)==new_str.charAt(r-l)) 
+			r++;
+            z[k]=r-l;
+            r--;
+        }
+        else{
+            var k1=k-l;
+            if((z[k1]+k)<(r+1))
+              z[k]=z[k1];
+              else{
+                  l=k;
+                  while(r<n && new_str.charAt(r)==new_str.charAt(r-l))
+				  r++;
+                 z[k]=r-l;
+                 r--;
+              }
+        }
+    }
+    var count=0;
+    for(var i=0; i<n; i++){
+        if(z[i]==p.length)
+         count++;
+    }
+document.getElementById("answer").value= count;
+}
+</script>
+<style>
+
+	h1
+	{
+		text-decoration:underline;
+		text-align:center;
+		
+	}
+	#div1
+	{
+		background-color:lightblue;
+		height:60px;
+	}
+#div10
+	{
+		background-color:pink;
+		height:60px;
+	}
+	#div2{
+		text-size:10px;
+	}
+	.i
+	{
+		font-size:20px;
+	}
+	#s
+	{
+		  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:125%;
+	}
+</style>
+<title>
+Quiz System
+</title>
+</head>
+<body>
+<div id='div1'>
+<h1>ALGORITHM PROJECT</h1>
+</div>
+</br>
+<div id='div10'>
+<h1>Implemenatation of Z Algorithm</h1>
+</div>
+<div id='div9'>
+<h2>Enter the Pattern String : </h2><input id="first"></br>
+<h2>Enter the Text:</h2> <input id="second"></br></br>
+
+<button onclick="add()">Search</button></br></br>
+<h2>Total Occurrence</h2>
+<input id="answer">
+</br></br>
+<ol>
+<li><h2><a href="nik2.html">Theory</a></h2></li>
+<li><h2><a href="nik3.html">Algorithm</a></h2></li>
+<li><h2><a href="nik4.html">Time Complexity</a></h2></li>
+</ol>
+</div>
+</body>
+</html>

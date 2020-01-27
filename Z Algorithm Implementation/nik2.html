@@ -1,0 +1,82 @@
+
+<html>
+<head>
+<style>
+
+	h1
+	{
+		text-decoration:underline;
+		text-align:center;
+		
+	}
+	#div1
+	{
+		background-color:lightblue;
+		height:60px;
+	}
+#div10
+	{
+		background-color:pink;
+		height:60px;
+	}
+	
+#div9
+	{
+		height:90px;
+	}
+	#div2{
+		text-size:10px;
+	}
+	.i
+	{
+		font-size:20px;
+	}
+	#s
+	{
+		  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:125%;
+	}
+</style>
+<title>
+Quiz System
+</title>
+</head>
+<body>
+<div id='div1'>
+<h1>Z Algorithm Theory</h1>
+</div>
+<div id='div10'>
+<h3>This algorithm finds all occurrences of a pattern in a text in linear time. Let length of text be n and of pattern be m, then total time taken is O(m + n) with linear space complexity. Now we can see that both time and space complexity is same as KMP algorithm but this algorithm is Simpler to understand.
+
+In this algorithm, we construct a Z array.</h3>
+</br>
+<h2>What is Z Array?</h2>
+</br>
+<pre id='div9'><h3>For a string str[0..n-1], Z array is of same length as string. An element Z[i] of Z array stores length of the longest substring starting from str[i] which is also a prefix of str[0..n-1]. The first entry of Z array is meaning less as complete string is always prefix of itself.
+
+Example:
+Index            0   1   2   3   4   5   6   7   8   9  10  11 
+Text             a   a   b   c   a   a   b   x   a   a   a   z
+Z values         X   1   0   0   3   1   0   0   2   2   1   0 
+More Examples:
+str  = "aaaaaa"
+Z[]  = {x, 5, 4, 3, 2, 1}
+
+str = "aabaacd"
+Z[] = {x, 1, 0, 2, 1, 0, 0}
+
+str = "abababab"
+Z[] = {x, 0, 6, 0, 4, 0, 2, 0}
+</h3>
+ </pre>
+</div>
+
+</body>
+</html>
